@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-image: url("https://i.imgur.com/zH38GnP.jpeg");
+    background-size:100% 150%;
+    text-align: center;
+    /*Using a beach image and resizing it 100% width and 150% height to fit properly. Might have to change later so it adjusts to window*/
+  
+}
+
+.container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    width: 100%;
+}
+
+header, footer{
+    padding: 10px;
+    border: 1px solid #bcbbbb;
+    background-color: #e5e2e283;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.188);
+}
+
+main{
+    padding: 50px;
+}
+
+

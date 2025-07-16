@@ -15,13 +15,15 @@ function App() {
 
   return (
     <Router>    
-      <div>
+      <div className="container">
         <header>
           <Navbar />
         </header>
 
         <main>
+          {/*
           <SignupLogin/>
+          */}
 
           <Routes>
             <Route path="/home" element={<Home wins={mockWins}/>} />
@@ -29,7 +31,19 @@ function App() {
           </Routes>
         </main>
 
-        <footer>Footer</footer>
+        <footer>
+          <ul>
+              <li>
+                <a href="https://jamesclear.com/">James Clear - author of Atomic Habits and inspiration for this app</a>
+              </li>
+              <li>
+                  <a href="https://www.hubermanlab.com/">Informational Podcast - Huberman Lab</a>
+              </li>
+              <li>
+                  Copyright 2025
+              </li>
+          </ul>
+        </footer>
       </div>
     </Router>        
   )

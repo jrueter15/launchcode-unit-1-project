@@ -17,3 +17,8 @@ created h1 for the signup or login options with a form element
 added paths to home and about
 
 added a footer element
+
+first commit
+
+added some filler for the home and about
+adding css and flexbox, however navbar isn't working right, which has stalled me
