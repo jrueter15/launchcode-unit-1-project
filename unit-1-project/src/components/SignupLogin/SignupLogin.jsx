@@ -2,22 +2,47 @@ import React from 'react'
 
 const SignupLogin = () => {
   return (
-    <div>
+    <div className="login-signup">
       <h1>
+        Log-in
+      </h1>
+      
+      <div className='inputs'>
+        <div className='input'>
+          <input type="text" placeholder="Name" required/>
+        </div>
+        <div className='input'>
+          <input type="email" placeholder="Email" required/>
+        </div>
+        <div className='input'>
+          <input type="password" placeholder="Password" required/>
+          </div>
+      </div>
+
+      <button type="submit">
         Login
-      </h1>
-
-      <form>
-
-      </form>
+      </button>
 
       <h1>
-        Sign-up
+        Sign-Up
       </h1>
+      
+      <div className='inputs'>
+        <div className='input'>
+          <input type="text" placeholder="Name" required/>
+        </div>
+        <div className='input'>
+          <input type="email" placeholder="Email" required/>
+        </div>
+        <div className='input'>
+          <input type="password" placeholder="Password" required/>
+          </div>
+      </div>
 
-      <form>
-        
-      </form>
+      <button type="submit">
+        Sign-up
+      </button>
+
     </div>
   )
 }

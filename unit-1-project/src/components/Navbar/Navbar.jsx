@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="navbar">
         <h1>Dot.Today</h1>
         <nav>
             <ul>

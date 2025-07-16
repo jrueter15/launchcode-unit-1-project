@@ -21,9 +21,8 @@ function App() {
         </header>
 
         <main>
-          {/*
+
           <SignupLogin/>
-          */}
 
           <Routes>
             <Route path="/home" element={<Home wins={mockWins}/>} />

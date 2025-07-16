@@ -1,12 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0;    
+    font-family: 'Open Sans',sans-serif;
 }
 
-html, body {
+header, footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #bcbbbb;
+    background-color: #e5e2e283;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.188);
+}
+
+header{
+    justify-content: space-between;
+}
+
+footer{
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+footer ul li, header ul li{
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 18px;
+    cursor:pointer;
+}
+
+footer{
+    align-items: center;
+}
+
+body {
     height: 100%;
-    font-family: sans-serif;
     max-width: 1600px;
     margin: 0 auto;
     background-image: url("https://i.imgur.com/zH38GnP.jpeg");
@@ -21,13 +58,6 @@ html, body {
     grid-template-rows: auto 1fr auto;
     height: 100vh;
     width: 100%;
-}
-
-header, footer{
-    padding: 10px;
-    border: 1px solid #bcbbbb;
-    background-color: #e5e2e283;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.188);
 }
 
 main{
