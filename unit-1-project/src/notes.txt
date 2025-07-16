@@ -1,0 +1,19 @@
+npm install-react-router-dom
+imported it
+
+created preliminary layout - created 4 mock components for signup/login, navbar, home, and about
+imported these 
+
+wrapped everything in router
+
+added a header with the navbar
+created a title and nav links for 'home' and 'about'
+
+created filler text for home and about jsx's
+
+created main, added signup/login to be used later
+created h1 for the signup or login options with a form element
+
+added paths to home and about
+
+added a footer element
