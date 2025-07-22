@@ -7,6 +7,22 @@
     font-family: 'Open Sans',sans-serif;
 }
 
+button{
+    padding: 4px 12px;
+    font-size: 16px;
+}
+
+.login-signup{
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 40vh;
+    background-color: #e5e2e283;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.188);
+    vertical-align: center;
+}
+
 header, footer {
     display: flex;
     align-items: center;
@@ -62,6 +78,29 @@ body {
 
 main{
     padding: 50px;
+
 }
 
+ol, ul{
+    list-style: none;
+}
+
+.dailyLogOutput, .dailyLogInput{
+    padding-top: 50px;
+}
+
+.log-textarea{
+  width: 80%;
+  min-height: 100px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #000000;
+}
+
+.about, .home{
+    padding: 10px;
+    background-color: #e5e2e283;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.188);    
+}
 
