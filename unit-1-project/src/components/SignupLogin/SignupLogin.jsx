@@ -52,8 +52,6 @@ const SignupLogin = ({onAuthSuccess}) => {
   
   return (
     <div className="login-signup">
-     
-      
       <div className='inputs'>
         <h1>
           Log-in
@@ -69,9 +67,7 @@ const SignupLogin = ({onAuthSuccess}) => {
             <input type="password" name="password" placeholder="Password" required autoComplete="password"/>
           </div>
           {loginError && <p style={{ color: 'red' }}>{loginError}</p>}        
-          <button type="submit">
-            Login
-          </button>
+          <Button type="submit" text="Login" />
         </form>
       </div>
 
@@ -91,9 +87,7 @@ const SignupLogin = ({onAuthSuccess}) => {
             <input type="password" name="password" placeholder="Password" required autoComplete="current-password"/>
           </div>
           {signupError && <p style={{ color: 'red' }}>{signupError}</p>}
-          <button type="submit">
-            Sign-up
-          </button>
+          <Button type="submit" text="Login" />
         </form>
       </div>
 

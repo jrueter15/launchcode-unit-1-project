@@ -13,6 +13,7 @@ function App() {
     { id: 3, text: "Meditate for 5 minutes" }
   ];
 
+  // Track if the user is logged in, defaults to false
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (

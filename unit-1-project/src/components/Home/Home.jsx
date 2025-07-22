@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
 import React from 'react';
+import { useState, useEffect } from "react";
+import Button from '../Button/Button';
 
 // Home component will display daily dots/logs the user adds
 // The component will also allow editing and deleting
@@ -65,7 +66,7 @@ const Home = ({wins}) => {
                 value={inputValue}
                 onChange={handleInputChange}
                 />
-            <button className="add-button" type="submit">Add</button>
+            <Button type="submit" text="Add" className="add-button" />
         </form>
         <div className="dailyLogOutput">
             <h1>Your Dots:</h1>
@@ -83,13 +84,11 @@ const Home = ({wins}) => {
                             </>
                         ):(
                             <>
-                                <span className="text">{log}</span>
-                                <button className="edit-button" onClick={() => startEditing(index)}>
-                                Edit
-                                </button>
-                                <button className="delete-button" onClick={() => deleteLog(index)}>
-                                Delete
-                                </button>
+                              <span className="text">{log}</span>
+                              <div className="log-buttons">
+                                <Button text="Edit" onClick={() => startEditing(index)} className="edit-button" />
+                                <Button text="Delete" onClick={() => deleteLog(index)} className="delete-button" />
+                              </div>
                             </>
                         )}
                     </li>
