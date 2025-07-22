@@ -89,7 +89,10 @@ const Home = ({wins}) => {
                     value={tempEditValue}
                     onChange={handleEditChange}
                 />
-                <button onClick={() => saveEdit(index)}>Save</button>
+                <Button
+                  text="Save"
+                  onClick={() => saveEdit(index)}
+                />
                   </>
                   ):(
                     <>

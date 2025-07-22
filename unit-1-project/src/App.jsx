@@ -13,12 +13,13 @@ function App() {
     { id: 3, text: "Meditate for 5 minutes" }
   ];
 
-  // Track if the user is logged in, defaults to false
+  // Tracks if the user is logged in, defaults to false
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <Router>    
       <div className="container">
+        {/*Checks to see if isAuthenticated is true before allowing access to the Navbar and other elements */}
         {isAuthenticated ? (
           <>
             <header>
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/" element={
                   isAuthenticated ? <Home wins={mockWins} /> : <SignupLogin onAuthSuccess={() => setIsAuthenticated(true)} />
                 } />
+                {/*Passes mockWins as prop*/}
                 <Route path="/home" element={<Home wins={mockWins} />} />
                 <Route path="/about" element={<About />} />
               </Routes>
@@ -49,6 +51,7 @@ function App() {
           </>
         ) : (
           <main> 
+            {/*If isAuthenticated is false, will rerun */}
             <SignupLogin onAuthSuccess={() => setIsAuthenticated(true)}/>
           </main>
         )}
