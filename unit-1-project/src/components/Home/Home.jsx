@@ -54,44 +54,53 @@ const Home = ({wins}) => {
 
   return (
     <div className="home">
-        <div className="welcome-message">
-            <h1>Welcome to Dot.Today!</h1>
-            <p>This app helps you quickly jot down a meaningful "dot" from your day—something you learned, did, or felt. It's a simple way to stay mindful, track your progress, and reflect over time.</p>
-        </div>
+      <div className="photo">
+        <img 
+          src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Person journaling" 
+          title="Person journaling"
+          style={{ width: '60%', borderRadius: '10px' }} 
+        />
+      </div>
+
+      <div className="welcome-message">
+        <h1>Welcome to Dot.Today!</h1>
+        <p>This app helps you quickly jot down a meaningful "dot" from your day—something you learned, did, or felt. It's a simple way to stay mindful, track your progress, and reflect over time.</p>
+      </div>
         
-        <form onSubmit={addLog} className="dailyLogInput">
-            <h1>What's your dot today?</h1>
-            <textarea
-                className="log-textarea"
-                value={inputValue}
-                onChange={handleInputChange}
+      <form onSubmit={addLog} className="dailyLogInput">
+        <h1>What's your dot today?</h1>
+        <textarea
+          className="log-textarea"
+          value={inputValue}
+          onChange={handleInputChange}
+          />
+        <Button type="submit" text="Add" className="add-button" />
+      </form>
+      <div className="dailyLogOutput">
+        <h1>Your Dots:</h1>
+          <ol>
+            {logs.map((log, index) =>
+            <li key={index}>
+              {currentlyEditingIndex === index ? (
+                <>
+                  <input
+                    type="text"
+                    value={tempEditValue}
+                    onChange={handleEditChange}
                 />
-            <Button type="submit" text="Add" className="add-button" />
-        </form>
-        <div className="dailyLogOutput">
-            <h1>Your Dots:</h1>
-            <ol>
-                {logs.map((log, index) =>
-                    <li key={index}>
-                        {currentlyEditingIndex === index ? (
-                            <>
-                                <input
-                                    type="text"
-                                    value={tempEditValue}
-                                    onChange={handleEditChange}
-                                />
-                                <button onClick={() => saveEdit(index)}>Save</button>
-                            </>
-                        ):(
-                            <>
-                              <span className="text">{log}</span>
-                              <div className="log-buttons">
-                                <Button text="Edit" onClick={() => startEditing(index)} className="edit-button" />
-                                <Button text="Delete" onClick={() => deleteLog(index)} className="delete-button" />
-                              </div>
-                            </>
-                        )}
-                    </li>
+                <button onClick={() => saveEdit(index)}>Save</button>
+                  </>
+                  ):(
+                    <>
+                      <span className="text">{log}</span>
+                      <div className="log-buttons">
+                        <Button text="Edit" onClick={() => startEditing(index)} className="edit-button" />
+                        <Button text="Delete" onClick={() => deleteLog(index)} className="delete-button" />
+                      </div>
+                    </>
+               )}
+            </li>
                 )}
             </ol>
         </div>
