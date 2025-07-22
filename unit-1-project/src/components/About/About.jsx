@@ -3,13 +3,21 @@ import React from 'react'
 const About = () => {
   return (
     <div className="about">
+        <div className="photo">
+            <img 
+            src="https://images.unsplash.com/photo-1598301257942-e6bde1d2149b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Atomic Habits Book" 
+            title="Atomic Habits Book"
+            style={{ width: '60%', borderRadius: '10px' }} 
+            />
+        </div>
         <h2>
             Why I Made This
         </h2>
         <p>
-            Like many, I’ve always had the desire to be better — more consistent, more focused, more fulfilled. But no matter how hard I tried, I often fell short. Motivation alone wasn’t enough, especially as life became more demanding with a new job and an intensive coding program.
+            I’ve always had the desire to be better. I wanted to be more consistent and focused in order to achieve my potential. No matter how hard I tried, I fell short. Motivation only goes so far, especially since life has become more demanding with a new job and an evening coding bootcamp.
 
-            This project provided an opportunity to pause and reflect — not just on what I was building, but why I hadn’t been progressing the way I wanted to. What was missing wasn’t effort — it was a system. A way to mark progress, even when it felt small or invisible.
+            This project provided an opportunity to reflect on where I've fallen short. What was I building? What habits was I forming? Why haven't I progressed the way I've wanted to? What's missing isn't effort, but a system and an identity. I wanted a way to track progress, even on days when I was burnt out and could only manage a little. I wanted to know if I got something done that day, even when it felt small.
         </p>
         <br></br>
 
@@ -18,7 +26,7 @@ const About = () => {
         </h2>
 
         <p>
-            This app is the product of that reflection. Inspired by the book "Atomic Habits" by James Clear, it’s built around one simple but transformative principle: small, consistent actions compound into meaningful change. You don’t need a dramatic life overhaul — you just need to add one dot today. Then another tomorrow. Then another. Then another.
+            This app is inspired by the book "Atomic Habits" by James Clear. The key principles of the book build around one simple principle: small, consistent actions compound into meaningful change and an identity shift. I don’t need to change in a day. I just need to add one dot today. Then another tomorrow. Then another. Then another.
         </p>
         <br></br>
 
@@ -29,20 +37,18 @@ const About = () => {
         <p>
             The goal of this app is simple:
         </p>
-        <br />
-        <br />
 
         <ul>
-            <li>Create a calm, judgment-free space to log small daily wins - your daily dot.</li>
-            <li>Build momentum through repetition.</li>
-            <li>Redefine your identity, one small action at a time.</li>
+            <li>Create a judgment-free space to log small daily wins - your daily dot</li>
+            <li>Build momentum through repetition</li>
+            <li>Redefine your identity, one small action at a time</li>
         </ul>
         <br />
 
         <p>
-            Whether your win is meditating for one minute, resisting the urge to scroll, or simply showing up — it counts here.
+            Whether the win is meditating for one minute, not doom scrolling, or simply showing up — it counts.
 
-            This is for anyone trying to change quietly, not loudly. Patiently, not perfectly. I built it for myself - to start connecting the dots - and maybe it can help you, too.       
+            This is for anyone who wants change, but hasn't achieved it yet. Let's change in small ways. Everyday. I built this for myself - and maybe it can help you, too.       
         </p>
     </div>
   )

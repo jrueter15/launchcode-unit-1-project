@@ -7,11 +7,11 @@ import Button from '../Button/Button';
 
 const Home = ({wins}) => {
     const [logs, setLogs] = useState(() => {
-        const storedLogs = localStorage.getItem("dailyLogs");
-        return storedLogs ? JSON.parse(storedLogs) : [];
+      const storedLogs = localStorage.getItem("dailyLogs");
+      return storedLogs ? JSON.parse(storedLogs) : [];
     })
     useEffect(() => {
-        localStorage.setItem("dailyLogs", JSON.stringify(logs));
+      localStorage.setItem("dailyLogs", JSON.stringify(logs));
     }, [logs]);
     const [inputValue, setInputValue] = useState("");
     const [currentlyEditingIndex, setCurrentlyEditingIndex] = useState(null);
@@ -65,7 +65,7 @@ const Home = ({wins}) => {
 
       <div className="welcome-message">
         <h1>Welcome to Dot.Today!</h1>
-        <p>This app helps you quickly jot down a meaningful "dot" from your day—something you learned, did, or felt. It's a simple way to stay mindful, track your progress, and reflect over time.</p>
+        <p>This app was designed to allow you to quickly record a meaningful "dot" from the day—any achievement, no matter how small. It's a simple way to stay mindful, track your progress, and reflect. This is based off the principles from "Atomic Habits" by James Clear, where each small achievements build up to form a habit and change your identity.</p>
       </div>
         
       <form onSubmit={addLog} className="dailyLogInput">
