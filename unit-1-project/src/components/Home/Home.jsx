@@ -6,16 +6,16 @@ import Button from '../Button/Button';
 // The component will also allow editing and deleting
 
 const Home = ({wins}) => {
-    const [logs, setLogs] = useState(() => {
-      const storedLogs = localStorage.getItem("dailyLogs");
-      return storedLogs ? JSON.parse(storedLogs) : [];
-    })
-    useEffect(() => {
-      localStorage.setItem("dailyLogs", JSON.stringify(logs));
-    }, [logs]);
-    const [inputValue, setInputValue] = useState("");
-    const [currentlyEditingIndex, setCurrentlyEditingIndex] = useState(null);
-    const [tempEditValue, setTempEditValue] = useState("");
+  const [logs, setLogs] = useState(() => {
+    const storedLogs = localStorage.getItem("dailyLogs");
+    return storedLogs ? JSON.parse(storedLogs) : [];
+  })
+  useEffect(() => {
+    localStorage.setItem("dailyLogs", JSON.stringify(logs));
+  }, [logs]);
+  const [inputValue, setInputValue] = useState("");
+  const [currentlyEditingIndex, setCurrentlyEditingIndex] = useState(null);
+  const [tempEditValue, setTempEditValue] = useState("");
 
   function handleInputChange(event){
     setInputValue(event.target.value);
@@ -26,7 +26,7 @@ const Home = ({wins}) => {
     if(inputValue.trim() !== ""){
       setLogs((prevLogs) => [...prevLogs, inputValue]);
       setInputValue("");
-      }
+    }
   }
   
   function startEditing(index) {
@@ -67,7 +67,16 @@ const Home = ({wins}) => {
         <h1>Welcome to Dot.Today!</h1>
         <p>This app was designed to allow you to quickly record a meaningful "dot" from the day—any achievement, no matter how small. It's a simple way to stay mindful, track your progress, and reflect. This is based off the principles from "Atomic Habits" by James Clear, where each small achievements build up to form a habit and change your identity.</p>
       </div>
-        
+      
+      <div className="suggested-wins">
+        <h2>Suggested Wins</h2>
+          <ul>
+            {wins.map(win => (
+              <li key={win.id}>{win.text}</li>
+            ))}    
+          </ul>
+      </div>
+
       <form onSubmit={addLog} className="dailyLogInput">
         <h1>What's your dot today?</h1>
         <textarea
@@ -79,8 +88,8 @@ const Home = ({wins}) => {
       </form>
       <div className="dailyLogOutput">
         <h1>Your Dots:</h1>
-          <ol>
-            {logs.map((log, index) =>
+        <ol>
+          {logs.map((log, index) =>
             <li key={index}>
               {currentlyEditingIndex === index ? (
                 <>
@@ -93,20 +102,20 @@ const Home = ({wins}) => {
                   text="Save"
                   onClick={() => saveEdit(index)}
                 />
-                  </>
-                  ):(
-                    <>
-                      <span className="text">{log}</span>
-                      <div className="log-buttons">
-                        <Button text="Edit" onClick={() => startEditing(index)} className="edit-button" />
-                        <Button text="Delete" onClick={() => deleteLog(index)} className="delete-button" />
-                      </div>
-                    </>
-               )}
+                </>
+              ):(
+                <>
+                  <span className="text">{log}</span>
+                  <div className="log-buttons">
+                    <Button text="Edit" onClick={() => startEditing(index)} className="edit-button" />
+                    <Button text="Delete" onClick={() => deleteLog(index)} className="delete-button" />
+                  </div>
+                </>
+              )}
             </li>
-                )}
-            </ol>
-        </div>
+          )}
+        </ol>
+      </div>
     </div>
   )
 }

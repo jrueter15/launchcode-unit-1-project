@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 
 function App() {
-    const mockWins = [
+  const mockWins = [
     { id: 1, text: "Went for a walk" },
     { id: 2, text: "Read 5 pages of a book" },
     { id: 3, text: "Meditate for 5 minutes" }
@@ -37,15 +37,15 @@ function App() {
             </main>
             <footer>
               <ul>
-                  <li>
-                    <a href="https://jamesclear.com/">James Clear - author of Atomic Habits and inspiration for this app</a>
-                  </li>
-                  <li>
-                      <a href="https://www.hubermanlab.com/">Informational Podcast - Huberman Lab</a>
-                  </li>
-                  <li>
-                      Copyright 2025
-                  </li>
+                <li>
+                  <a href="https://jamesclear.com/">James Clear - author of Atomic Habits and inspiration for this app</a>
+                </li>
+                <li>
+                  <a href="https://www.hubermanlab.com/">Informational Podcast - Huberman Lab</a>
+                </li>
+                <li>
+                  Copyright 2025
+                </li>
               </ul>
             </footer>
           </>
