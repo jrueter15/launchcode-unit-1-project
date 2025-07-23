@@ -17,7 +17,8 @@ const Home = ({wins}) => {
     "Another win today!",
     "Way to go!",
     "You can do it!",
-    "Those dots are adding up!"
+    "Those dots are adding up!",
+    "Consistency beats intensity"
   ];
 
   // State for logs using local storage
@@ -97,8 +98,8 @@ const Home = ({wins}) => {
         <p>This app was designed to allow you to quickly record a meaningful "dot" from the day—any achievement, no matter how small. It's a simple way to stay mindful, track your progress, and reflect. This is based off the principles from "Atomic Habits" by James Clear, where each small achievements build up to form a habit and change your identity.</p>
       </div>
       
-      <div className="suggested-wins">
-        <h2>Suggested Wins</h2>
+      <div className="suggested-dots">
+        <h2>Suggested Dots</h2>
           <ul>
             {wins.map(win => (
               <li key={win.id}>{win.text}</li>
@@ -108,7 +109,7 @@ const Home = ({wins}) => {
 
       {/* Form to add a  new log */}
       <form onSubmit={addLog} className="daily-log-input">
-        <h1>What's your dot today?</h1>
+        <h1>Dot Log - What's your dot today?</h1>
         <textarea
           className="log-textarea"
           value={inputValue}
@@ -120,9 +121,16 @@ const Home = ({wins}) => {
       <br></br>
       {encouragement && <p className="encouragement">{encouragement}</p>}
 
+
       {/* Display list of logs */}
       <div className="daily-log-output">
-        <h1>Your Dots:</h1>
+        <h1>Dot Archive ({logs.length})</h1>
+        <div className="dots-archive">
+            {logs.map((_, index) => (
+              <span key={index}>•</span>
+            ))}
+        </div>
+        <Button text="Clear All" onClick={() => setLogs([])} />
         <ol>
           {logs.map((log, index) =>
             <li key={index}>

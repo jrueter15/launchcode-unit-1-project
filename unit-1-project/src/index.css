@@ -94,7 +94,7 @@ ol, ul{
   list-style: none;
 }
 
-.daily-log-output, .daily-log-input, .suggested-wins{
+.daily-log-output, .daily-log-input, .suggested-dots{
   padding-top: 6vh;
 }
 
@@ -113,7 +113,7 @@ ol, ul{
 .log-textarea{
   width: 80%;
   min-height: 100px;
-  font-size: 3vh;
+  font-size: 2vh;
   padding: 10px;
   border-radius: 20px;
   border: 1px solid #000000;
@@ -122,6 +122,14 @@ ol, ul{
 .encouragement{
   font-weight: bold;
   font-style: italic;
+}
+
+.dots-archive {
+  font-size: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
 }
 
 .about, .home{
