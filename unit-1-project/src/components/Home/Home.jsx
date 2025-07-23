@@ -121,7 +121,6 @@ const Home = ({wins}) => {
       <br></br>
       {encouragement && <p className="encouragement">{encouragement}</p>}
 
-
       {/* Display list of logs */}
       <div className="daily-log-output">
         <h1>Dot Archive ({logs.length})</h1>

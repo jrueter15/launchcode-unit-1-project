@@ -8,14 +8,6 @@
   font-family: 'Open Sans',sans-serif;
 }
 
-.custom-button{
-  padding: 1vh 1.5vh;
-}
-
-.custom-button:hover{
-  background-color: rgb(183, 183, 183);
-}
-
 /* Container for login and signup using flex layout */
 .login-signup{
   padding: 20px;
@@ -109,6 +101,16 @@ ol, ul{
     gap: 8px;
 }
 
+.custom-button{
+  padding: 1vh 1.5vh;
+  transition: transform 0.5s ease;
+}
+
+.custom-button:hover{
+  background-color: rgba(183, 183, 183, 0.301);
+  transform: scale(1.20);
+}
+
 /* Text-area/log entry styling */
 .log-textarea{
   width: 80%;
@@ -122,6 +124,8 @@ ol, ul{
 .encouragement{
   font-weight: bold;
   font-style: italic;
+  transition: transform 1.5s ease;
+  transform: scale(1.25);
 }
 
 .dots-archive {
