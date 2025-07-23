@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 function App() {
   // Mock backend data to pass as prop
-  const examplePriorWins = [
+  const suggestedWins = [
     {id: 1, text: "Went for a walk", date: "2025-07-01" },
     {id: 2, text: "Read 5 pages of a book", date: "2025-07-02" },
     {id: 3, text: "Meditate for 5 minutes", date: "2025-07-03" }
@@ -31,10 +31,10 @@ function App() {
               <Routes>
                 {/*Shows Home with mockWins passed if authenticated*/}
                 <Route path="/" element={
-                  isAuthenticated ? <Home wins={examplePriorWins} /> : <SignupLogin onAuthSuccess={() => setIsAuthenticated(true)} />
+                  isAuthenticated ? <Home wins={suggestedWins} /> : <SignupLogin onAuthSuccess={() => setIsAuthenticated(true)} />
                 } />
-                <Route path="/home" element={<Home wins={examplePriorWins} />} />
-                <Route path="/calendar-page" element={<CalendarPage wins={examplePriorWins} />} />
+                <Route path="/home" element={<Home wins={suggestedWins} />} />
+                <Route path="/calendar-page" element={<CalendarPage wins={suggestedWins} />} />
                 <Route path="/about" element={<About />} />
               </Routes>
             </main>

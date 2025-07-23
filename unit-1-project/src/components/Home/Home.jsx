@@ -6,6 +6,20 @@ import Button from '../Button/Button';
 // The component will also allow editing and deleting
 
 const Home = ({wins}) => {
+
+  const encouragingMessageArray = [
+    "Great job!",
+    "Nice momentum!",
+    "Every little bit counts!",
+    "No matter how small...it counts.",
+    "Another step towards your new identity!",
+    "Another dot closer!",
+    "Another win today!",
+    "Way to go!",
+    "You can do it!",
+    "Those dots are adding up!"
+  ];
+
   // State for logs using local storage
   const [logs, setLogs] = useState(() => {
     const storedLogs = localStorage.getItem("dailyLogs");
@@ -21,6 +35,7 @@ const Home = ({wins}) => {
   const [inputValue, setInputValue] = useState("");
   const [currentlyEditingIndex, setCurrentlyEditingIndex] = useState(null);
   const [tempEditValue, setTempEditValue] = useState("");
+  const [encouragement, setEncouragement] = useState("");
 
   // Handles typing
   function handleInputChange(e){
@@ -33,6 +48,9 @@ const Home = ({wins}) => {
     if(inputValue.trim() !== ""){
       setLogs((prevLogs) => [...prevLogs, inputValue]);
       setInputValue("");
+
+      const randomMessage = encouragingMessageArray[Math.floor(Math.random() * encouragingMessageArray.length)];
+      setEncouragement(randomMessage);
     }
   }
   
@@ -79,8 +97,8 @@ const Home = ({wins}) => {
         <p>This app was designed to allow you to quickly record a meaningful "dot" from the day—any achievement, no matter how small. It's a simple way to stay mindful, track your progress, and reflect. This is based off the principles from "Atomic Habits" by James Clear, where each small achievements build up to form a habit and change your identity.</p>
       </div>
       
-      <div className="prior-wins">
-        <h2>Prior Wins</h2>
+      <div className="suggested-wins">
+        <h2>Suggested Wins</h2>
           <ul>
             {wins.map(win => (
               <li key={win.id}>{win.text}</li>
@@ -98,6 +116,10 @@ const Home = ({wins}) => {
           />
         <Button type="submit" text="Add"/>
       </form>
+
+      <br></br>
+      {encouragement && <p className="encouragement">{encouragement}</p>}
+
       {/* Display list of logs */}
       <div className="daily-log-output">
         <h1>Your Dots:</h1>

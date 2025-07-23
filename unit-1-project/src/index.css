@@ -94,7 +94,7 @@ ol, ul{
   list-style: none;
 }
 
-.daily-log-output, .daily-log-input, .prior-wins{
+.daily-log-output, .daily-log-input, .suggested-wins{
   padding-top: 6vh;
 }
 
@@ -117,6 +117,11 @@ ol, ul{
   padding: 10px;
   border-radius: 20px;
   border: 1px solid #000000;
+}
+
+.encouragement{
+  font-weight: bold;
+  font-style: italic;
 }
 
 .about, .home{
