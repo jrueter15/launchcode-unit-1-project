@@ -22,3 +22,40 @@ first commit
 
 added some filler for the home and about
 adding css and flexbox, however navbar isn't working right, which has stalled me
+
+"npm install react-calendar"
+
+
+const Calendar = () => {
+    const[logs, setLogs] = useState([])
+
+    // Load logs from local storage
+    useEffect(() => {
+        const storedLogs = localStorage.getItem("dailyLogs");
+        if(storedLogs){
+            setLogs(JSON.parse(storedLogs));
+        }
+    }, []);
+
+    const logDates = logs.map(log => {
+        return log.date ? new Date(log.date).toDateString(): new Date().toDateString();
+    });
+
+    function calendarContent({date, view}){
+        if (view === "month"){
+            const hasLog = logDates.includes(date.toDateString());
+            return hasLog ? <div className="dot"></div> : null;
+        }
+    }
+
+    return (
+        <div className="calendar-page">
+            <div className="Calendar">
+                <h1>Dot Calendar</h1>
+                <Calendar calendarContent={calendarContent} />
+            </div>
+        </div>
+  )
+}
+
+export default Calendar

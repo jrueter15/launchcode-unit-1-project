@@ -2,17 +2,17 @@ import SignupLogin from './components/SignupLogin/SignupLogin'
 import Navbar from './components/Navbar/Navbar'
 import Home from './components/Home/Home'
 import About from './components/About/About'
+import CalendarPage from './components/Calendar/Calendar'
 import {useState} from 'react'
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 
 function App() {
-  // Example data or mockWins to pass as props to Home
-  // Future back-end knowledge would allow me to pass prior wins from a server
-  const mockWins = [
-    { id: 1, text: "Went for a walk" },
-    { id: 2, text: "Read 5 pages of a book" },
-    { id: 3, text: "Meditate for 5 minutes" }
+  // Mock backend data to pass as prop
+  const examplePriorWins = [
+    {text: "Went for a walk", date: "2025-07-01" },
+    {text: "Read 5 pages of a book", date: "2025-07-02" },
+    {text: "Meditate for 5 minutes", date: "2025-07-03" }
   ];
 
   // Tracks if the user is logged in, defaults to false
@@ -31,9 +31,10 @@ function App() {
               <Routes>
                 {/*Shows Home with mockWins passed if authenticated*/}
                 <Route path="/" element={
-                  isAuthenticated ? <Home wins={mockWins} /> : <SignupLogin onAuthSuccess={() => setIsAuthenticated(true)} />
+                  isAuthenticated ? <Home wins={examplePriorWins} /> : <SignupLogin onAuthSuccess={() => setIsAuthenticated(true)} />
                 } />
-                <Route path="/home" element={<Home wins={mockWins} />} />
+                <Route path="/home" element={<Home wins={examplePriorWins} />} />
+                <Route path="/calendar-page" element={<CalendarPage wins={examplePriorWins} />} />
                 <Route path="/about" element={<About />} />
               </Routes>
             </main>

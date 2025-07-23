@@ -17,19 +17,14 @@ const Home = ({wins}) => {
     localStorage.setItem("dailyLogs", JSON.stringify(logs));
   }, [logs]);
 
-  // State for new input
+  // State for new input and editing
   const [inputValue, setInputValue] = useState("");
-
-  // State for editing log
   const [currentlyEditingIndex, setCurrentlyEditingIndex] = useState(null);
   const [tempEditValue, setTempEditValue] = useState("");
 
-  // State for fetch quote
-  const [quote, setQuote] = useState("");
-
   // Handles typing
-  function handleInputChange(event){
-    setInputValue(event.target.value);
+  function handleInputChange(e){
+    setInputValue(e.target.value);
   }
 
   // Function for adding a log
@@ -85,7 +80,7 @@ const Home = ({wins}) => {
       </div>
       
       <div className="suggested-wins">
-        <h2>Suggested Wins</h2>
+        <h2>Prior Wins</h2>
           <ul>
             {wins.map(win => (
               <li key={win.id}>{win.text}</li>

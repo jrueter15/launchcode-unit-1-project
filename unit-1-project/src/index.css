@@ -127,6 +127,22 @@ ol, ul{
 .photo{
     padding: 50px;
 }
+
+.calendar-page{
+  background-color: #e5e2e283;
+  font-size: 1.5rem;
+}
+
+.react-calendar__month-view__days__day {
+  font-size: 1.2rem;
+}
+
+.react-calendar__navigation button {
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+
  /* Mobile styling */
 @media (max-width: 768px) {
   body {
