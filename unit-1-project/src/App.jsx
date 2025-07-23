@@ -10,9 +10,9 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 function App() {
   // Mock backend data to pass as prop
   const examplePriorWins = [
-    {text: "Went for a walk", date: "2025-07-01" },
-    {text: "Read 5 pages of a book", date: "2025-07-02" },
-    {text: "Meditate for 5 minutes", date: "2025-07-03" }
+    {id: 1, text: "Went for a walk", date: "2025-07-01" },
+    {id: 2, text: "Read 5 pages of a book", date: "2025-07-02" },
+    {id: 3, text: "Meditate for 5 minutes", date: "2025-07-03" }
   ];
 
   // Tracks if the user is logged in, defaults to false

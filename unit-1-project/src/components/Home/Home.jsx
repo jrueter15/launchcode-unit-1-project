@@ -79,7 +79,7 @@ const Home = ({wins}) => {
         <p>This app was designed to allow you to quickly record a meaningful "dot" from the day—any achievement, no matter how small. It's a simple way to stay mindful, track your progress, and reflect. This is based off the principles from "Atomic Habits" by James Clear, where each small achievements build up to form a habit and change your identity.</p>
       </div>
       
-      <div className="suggested-wins">
+      <div className="prior-wins">
         <h2>Prior Wins</h2>
           <ul>
             {wins.map(win => (
