@@ -1,3 +1,4 @@
+/* Importing Open Sans - a widely universal font */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 * {
@@ -16,6 +17,7 @@
     background-color: rgb(183, 183, 183);
 }
 
+/* Container for login and signup using flex layout */
 .login-signup{
     padding: 20px;
     display: flex;
@@ -44,6 +46,7 @@ footer{
     justify-content: center;
 }
 
+/* Navbar container using flex */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -62,17 +65,17 @@ footer{
     align-items: center;
 }
 
+/* Body styled with image background and resized to fit */
 body {
     height: 100%;
     max-width: 1600px;
     margin: 0 auto;
     background-image: url("https://i.imgur.com/zH38GnP.jpeg");
     background-size:100% 150%;
-    text-align: center;
-    /*Using a beach image and resizing it 100% width and 150% height to fit properly. Might have to change later so it adjusts to window*/
-  
+    text-align: center;  
 }
 
+/* Main container using grid with header, main, and footer */
 .container{
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -85,15 +88,16 @@ main{
 
 }
 
+/* Removing dot for lists */
 ol, ul{
     list-style: none;
 }
 
-.dailyLogOutput, .dailyLogInput, .suggested-wins{
+.daily-log-output, .daily-log-input, .suggested-wins{
     padding-top: 40px;
 }
 
-.dailyLogOutput ol li{
+.daily-log-output ol li{
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -104,6 +108,7 @@ ol, ul{
     gap: 8px;
 }
 
+/* Text-area/log entry styling */
 .log-textarea{
   width: 80%;
   min-height: 100px;
@@ -121,4 +126,59 @@ ol, ul{
 
 .photo{
     padding: 50px;
+}
+ /* Mobile styling */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;  
+  }
+
+  .login-signup {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .home .photo img {
+    width: 90%; 
+  }
+
+  /* Navbar vertical for small screens */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Footer links stacked vertical */
+  footer ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+/* Styling for tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  body {
+    background-size: contain; 
+  }
+
+  .login-signup {
+    flex-direction: row;  
+    padding: 15px;
+    justify-content: center;
+  }
+
+  .home .photo img {
+    width: 70%; 
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  footer ul li {
+    display: inline-block;
+    margin: 10px 15px;
+  }
 }

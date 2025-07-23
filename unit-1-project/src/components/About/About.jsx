@@ -1,8 +1,11 @@
 import React from 'react'
 
+// A simple about page explaining the purpose and mission of app
+
 const About = () => {
   return (
     <div className="about">
+        {/* Photo displaying Atomic Habits inspiration */}
         <div className="photo">
             <img 
             src="https://images.unsplash.com/photo-1598301257942-e6bde1d2149b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

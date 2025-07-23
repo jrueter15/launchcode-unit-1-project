@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 
 function App() {
+  // Example data or mockWins to pass as props to Home
+  // Future back-end knowledge would allow me to pass prior wins from a server
   const mockWins = [
     { id: 1, text: "Went for a walk" },
     { id: 2, text: "Read 5 pages of a book" },
@@ -19,7 +21,7 @@ function App() {
   return (
     <Router>    
       <div className="container">
-        {/*Checks to see if isAuthenticated is true before allowing access to the Navbar and other elements */}
+        {/*Checks to see if isAuthenticated is true before allowing access to the Navbar and the rest of the app */}
         {isAuthenticated ? (
           <>
             <header>
@@ -27,10 +29,10 @@ function App() {
             </header>
             <main>
               <Routes>
+                {/*Shows Home with mockWins passed if authenticated*/}
                 <Route path="/" element={
                   isAuthenticated ? <Home wins={mockWins} /> : <SignupLogin onAuthSuccess={() => setIsAuthenticated(true)} />
                 } />
-                {/*Passes mockWins as prop*/}
                 <Route path="/home" element={<Home wins={mockWins} />} />
                 <Route path="/about" element={<About />} />
               </Routes>
@@ -51,7 +53,7 @@ function App() {
           </>
         ) : (
           <main> 
-            {/*If isAuthenticated is false, will rerun */}
+            {/*If isAuthenticated is false, will still show SignupLogin */}
             <SignupLogin onAuthSuccess={() => setIsAuthenticated(true)}/>
           </main>
         )}

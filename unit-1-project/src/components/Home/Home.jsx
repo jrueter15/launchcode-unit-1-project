@@ -2,42 +2,57 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import Button from '../Button/Button';
 
-// Home component will display daily dots/logs the user adds
+// Home component will display past wins (currently suggested wins) and daily dots/logs the user adds
 // The component will also allow editing and deleting
 
 const Home = ({wins}) => {
+  // State for logs using local storage
   const [logs, setLogs] = useState(() => {
     const storedLogs = localStorage.getItem("dailyLogs");
     return storedLogs ? JSON.parse(storedLogs) : [];
   })
+
+  // Sync logs state to local storage
   useEffect(() => {
     localStorage.setItem("dailyLogs", JSON.stringify(logs));
   }, [logs]);
+
+  // State for new input
   const [inputValue, setInputValue] = useState("");
+
+  // State for editing log
   const [currentlyEditingIndex, setCurrentlyEditingIndex] = useState(null);
   const [tempEditValue, setTempEditValue] = useState("");
 
+  // State for fetch quote
+  const [quote, setQuote] = useState("");
+
+  // Handles typing
   function handleInputChange(event){
     setInputValue(event.target.value);
   }
 
-  function addLog(event){
-    event.preventDefault();
+  // Function for adding a log
+  function addLog(e){
+    e.preventDefault();
     if(inputValue.trim() !== ""){
       setLogs((prevLogs) => [...prevLogs, inputValue]);
       setInputValue("");
     }
   }
   
+  // function for editing specific log
   function startEditing(index) {
     setCurrentlyEditingIndex(index);
     setTempEditValue(logs[index]);
   }
 
+  // function for handling editing changes
   function handleEditChange(e) {
     setTempEditValue(e.target.value);
   }
 
+  // function to save the edits
   function saveEdit(index) {
     const updatedLogs = logs.map((log, i) =>
       i === index ? tempEditValue : log
@@ -47,6 +62,7 @@ const Home = ({wins}) => {
     setTempEditValue("");
   }
 
+  // function to delete a specific log at index
   function deleteLog(index){
     const updatedLogs = logs.filter((element, i) => i !== index)
     setLogs(updatedLogs);
@@ -77,16 +93,18 @@ const Home = ({wins}) => {
           </ul>
       </div>
 
-      <form onSubmit={addLog} className="dailyLogInput">
+      {/* Form to add a  new log */}
+      <form onSubmit={addLog} className="daily-log-input">
         <h1>What's your dot today?</h1>
         <textarea
           className="log-textarea"
           value={inputValue}
           onChange={handleInputChange}
           />
-        <Button type="submit" text="Add" className="add-button" />
+        <Button type="submit" text="Add"/>
       </form>
-      <div className="dailyLogOutput">
+      {/* Display list of logs */}
+      <div className="daily-log-output">
         <h1>Your Dots:</h1>
         <ol>
           {logs.map((log, index) =>
@@ -97,18 +115,19 @@ const Home = ({wins}) => {
                     type="text"
                     value={tempEditValue}
                     onChange={handleEditChange}
-                />
-                <Button
-                  text="Save"
-                  onClick={() => saveEdit(index)}
-                />
+                  />
+                  <Button
+                    text="Save"
+                    onClick={() => saveEdit(index)}
+                  />
                 </>
               ):(
+                // Displays log along with edit and delete buttons
                 <>
                   <span className="text">{log}</span>
                   <div className="log-buttons">
-                    <Button text="Edit" onClick={() => startEditing(index)} className="edit-button" />
-                    <Button text="Delete" onClick={() => deleteLog(index)} className="delete-button" />
+                    <Button text="Edit" onClick={() => startEditing(index)} />
+                    <Button text="Delete" onClick={() => deleteLog(index)}/>
                   </div>
                 </>
               )}

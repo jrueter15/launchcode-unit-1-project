@@ -3,10 +3,13 @@ import {useState} from 'react'
 import Button from '../Button/Button';
 import Form from '../Form/Form';
 
+// Handles both Signup and Login
 const SignupLogin = ({onAuthSuccess}) => {
+  // State for tracking login and signup errors
   const[loginError, setLoginError] = useState('');
   const[signupError, setSignupError] = useState('');
 
+  // Validation test for empty fields, email regex, and password length
   const validateForm = ({ name, email, password }) => {
     if (!name || !email || !password) {
       return 'All fields are required.';
@@ -21,6 +24,7 @@ const SignupLogin = ({onAuthSuccess}) => {
     return null;
   };
  
+  // Handles form submission
   const handleForm = (e, setError) => {
     e.preventDefault();
     const name = e.target.name.value.trim();

@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 
+// Navbar component for header/title and router links
 const Navbar = () => {
   return (
     <div className="navbar">
