@@ -1,6 +1,5 @@
 import React from 'react'
 import {useState} from 'react'
-import Button from '../Button/Button';
 import Form from '../Form/Form';
 
 // Handles both Signup and Login

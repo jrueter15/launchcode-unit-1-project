@@ -125,7 +125,7 @@ const Home = ({wins}) => {
       <div className="daily-log-output">
         <h1>Dot Archive ({logs.length})</h1>
         <div className="dots-archive">
-            {logs.map((_, index) => (
+            {logs.map((element, index) => (
               <span key={index}>•</span>
             ))}
         </div>

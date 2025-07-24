@@ -30,9 +30,7 @@ function App() {
             <main>
               <Routes>
                 {/*Shows Home with mockWins passed if authenticated*/}
-                <Route path="/" element={
-                  isAuthenticated ? <Home wins={suggestedDots} /> : <SignupLogin onAuthSuccess={() => setIsAuthenticated(true)} />
-                } />
+                <Route path="/" element={<Home wins={suggestedDots} />} />
                 <Route path="/home" element={<Home wins={suggestedDots} />} />
                 <Route path="/calendar-page" element={<CalendarPage wins={suggestedDots} />} />
                 <Route path="/about" element={<About />} />
